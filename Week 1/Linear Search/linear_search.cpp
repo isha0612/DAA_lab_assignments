@@ -2,32 +2,25 @@
 #include <fstream>
 using namespace std;
 int main() {
-    fstream input, output;
-    input.open("linear_search_input.txt");
-    output.open("linear_search_output.txt");
-    if(!input) {
-        cout<<"Can't open file";
-        exit(0);
-    }
     int t;
-    input>>t;
+    cin>>t;
     while(t--) {
         int n, key;
-        input>>n;
+        cin>>n;
         int arr[n];
         for(int i = 0; i < n; i++) {
-            input>>arr[i];
+            cin>>arr[i];
         }
-        input>>key;
+        cin>>key;
         int j;
         for(j = 0; j < n; j++) {
             if(arr[j] == key) {
-                output<<"Present "<<j+1<<'\n';
+                cout<<"Present "<<j+1<<'\n';
                 break;
             }
         }
         if(j == n) {
-            output<<"Not Present "<<j<<"\n";
+            cout<<"Not Present "<<j<<"\n";
         }
     }
 
