@@ -1,23 +1,29 @@
 #include <iostream>
 using namespace std;
 int main() {
-    fstream input, output;
-    input.open("binary_search_input.txt");
-    output.open("binary_search_output.txt");
-    if(!input) {
-        cout<<"File not found";
-        exit(0);
-    }
     int t;
-    input>>t;
+    cin>>t;
     while(t--) {
         int n, key;
-        input>>n;
+        cin>>n;
         int arr[n];
         for(int i = 0; i < n; i++) {
-            input>>arr[i];
+            cin>>arr[i];
         }
-        input>>key;
-        
+        cin>>key;
+        int l = 0, h = n - 1;
+        int i = 0, flag = 0;
+        while(l <= h) {
+            int mid = (l + h) / 2;
+            i++;
+            if(arr[mid] == key) {
+                flag = 1;
+                cout<<"Present "<<i<<endl;
+                break;
+            }
+            else if(arr[mid] > key) h = mid - 1;
+            else l = mid + 1;
+        }
+        if(!flag) cout<<"Present "<<n/2<<endl;
     }
 }
