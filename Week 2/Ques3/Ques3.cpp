@@ -25,7 +25,7 @@ int main() {
             }
             else if(arr[h] - arr[l] > key) h--;
             else l++;
-        }
+            }
         }
         cout<<c<<endl;
     }
