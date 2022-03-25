@@ -1,0 +1,9 @@
+-21 12 -13 65 45 76 46 89 
+comparsions = 28
+swaps = 7
+5 21 32 65 76 78 34 46 51 97 
+comparsions = 45
+swaps = 9
+46 2 63 325 645 12 223 22 324 31 54 65 86 553 652 
+comparsions = 105
+swaps = 14
