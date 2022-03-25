@@ -14,7 +14,7 @@ int main() {
         for(int i = 0; i < n; i++) {
             int k = n - 1;
             int j = i + 1;
-            while(j < n) {
+            while(j < n && k > j) {
                 if(arr[i] + arr[j] == arr[k]) {
                     v.push_back(i+1);
                     v.push_back(j+1);
