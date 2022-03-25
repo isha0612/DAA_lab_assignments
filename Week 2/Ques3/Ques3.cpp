@@ -25,11 +25,7 @@ int main() {
             }
             else if(arr[h] - arr[l] > key) h--;
             else l++;
-<<<<<<< HEAD
            }
-=======
-            }
->>>>>>> d03edb03b764e789a0b4a39709e816611d2cd09e
         }
         cout<<c<<endl;
     }
