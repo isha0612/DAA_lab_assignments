@@ -16,8 +16,7 @@ void findDuplicates(int arr[], int n, int key) {
     if(flag) {
         int i = mid - 1, j = mid + 1;
         int c = 1;
-        
-                while(i >= 0) {
+        while(i >= 0) {
             if(arr[i] != key) break;
             c++; i--;
         }
