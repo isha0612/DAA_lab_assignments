@@ -21,7 +21,8 @@ int main() {
             pq.push(arr[i]);
             if(pq.size() > k) pq.pop();
         }
-        cout<<pq.top()<<endl;
+        if(pq.empty()) cout<<"Not present"<<endl;
+        else cout<<pq.top()<<endl;
         delete []arr;
     }
 }
