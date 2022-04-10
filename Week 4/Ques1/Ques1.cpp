@@ -63,5 +63,6 @@ int main() {
         mergeSort(arr, 0, n - 1);
         display(arr, n);
         cout<<"comparisons = "<<c<<endl;
+        delete []arr;
     }
 }
