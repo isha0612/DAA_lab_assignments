@@ -26,7 +26,7 @@ int main() {
         graph[v1].push_back(v2);
         graph[v2].push_back(v1);
     }
-    for(int i = 1; i <= 5;i ++) {
+    for(int i = 1; i <= 5; i++) {
         cout<<i<<"->";
         for(auto x : graph[i]) {
             cout<<x<<" ";
