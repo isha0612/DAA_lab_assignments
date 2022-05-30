@@ -3,7 +3,7 @@ using namespace std;
 const int N = 6;
 vector<pair<int, int>> graph[N];
 
-void dijkstra(int source) {
+void bellman(int source) {
     vector<int> dis(N, INT_MAX);
     dis[source] = 0;
     set<pair<int, int>> s;
@@ -37,5 +37,5 @@ int main() {
     }
     int source;
     cin>>source;
-    dijkstra(source);
+    bellman(source);
 }
