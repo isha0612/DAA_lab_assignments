@@ -1,1 +1,1 @@
-Minimum spanning tree weight : 39
+Minimum spanning tree weight : 15
