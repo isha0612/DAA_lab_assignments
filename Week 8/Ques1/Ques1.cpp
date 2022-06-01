@@ -15,7 +15,6 @@ int prim(int source) {
         int wt = node.first;
         if(vis[v]) continue;
         ans += wt;
-        cout<<v<<" ";
         vis[v] = 1;
         for(auto child : graph[v]) {
             int child_v = child.first;
