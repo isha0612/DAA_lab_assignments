@@ -2,8 +2,8 @@
 using namespace std;
 
 bool cmp(pair<int, int> a, pair<int, int> b) {
-    double val1 = (double)a.second/ a.first;
-    double val2 = (double)b.second/ b.first;
+    int val1 = a.second/ a.first;
+    int val2 =  b.second/ b.first;
     return val1 > val2;
 }
 
@@ -17,15 +17,17 @@ int main() {
     }
     int weight; cin>>weight;
     sort(fk.begin(), fk.end(), cmp);
-    int ans = 0;
+    int currWeight = 0;
+    double ans = 0.0;
     for(int i = 0; i < n; i++) {
-        if(fk[i].first <= weight) {
-            weight -= fk[i].first;
+        if(currWeight + fk[i].first <= weight) {
+            currWeight += fk[i].first;
             ans += fk[i].second;
         }
         else {
-            ans += ((double)fk[i].second / fk[i].first) * weight;
-            break;
+            int remain = weight - currWeight;
+           ans += (fk[i].second / (double(fk[i].first))) * double(remain);   
+           break;
         }
     }
     cout<<ans;
