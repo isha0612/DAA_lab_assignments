@@ -2,31 +2,21 @@
 using namespace std;
 
 int main() {
-    int n;
-    cin>>n;
-    multiset<pair<int,int>> s;
-    vector<int> v1(n);
-    vector<int> v2(n);
     vector<int> ans;
+    vector<pair<int, int>> as;
+    int n; cin>>n;
+    vector<int> v1(n), v2(n);
+    for(int i = 0; i < n; i++) cin>>v1[i];
+    for(int i = 0; i < n; i++) cin>>v2[i];
     for(int i = 0; i < n; i++) {
-        cin>>v1[i];
+        as.push_back({v2[i], v1[i]});
     }
+    sort(as.begin(), as.end());
+    int curEnd = -1;
     for(int i = 0; i < n; i++) {
-        cin>>v2[i];
-    }
-    for(int i = 0; i < n; i++) {
-        s.insert({v1[i], 1});
-        s.insert({v2[i], -1});
-        ans.push_back(i + 1);
-        int t = 0;
-        for(auto it : s) {
-            t += it.second;
-            if(t > 1) {
-                s.erase(s.find({v1[i], 1}));
-                s.erase(s.find({v2[i], -1}));
-                ans.pop_back();
-                break;
-            }
+        if(as[i].second > curEnd) {
+            ans.push_back(i + 1);
+            curEnd = as[i].first;
         }
     }
     cout<<"No. of non-conflicting activities: "<<ans.size()<<endl;
