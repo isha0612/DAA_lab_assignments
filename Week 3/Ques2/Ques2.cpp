@@ -7,7 +7,7 @@ void selectionSort(int arr[], int n) {
         small = i;
         for(int j = i + 1; j < n; j++) {
             c++;
-            if(arr[i] > arr[j]) {
+            if(arr[small] > arr[j]) {
                 small = j;
             }
         }
