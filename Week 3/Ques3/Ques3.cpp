@@ -11,7 +11,7 @@ int main() {
         for(int i = 0; i < n; i++)
           cin>>arr[i];
         sort(arr, arr + n);
-        int i;
+        int i = 0;
         while(i < n - 1) {
             if(arr[i] == arr[i + 1]) {
                 cout<<"YES"<<endl;
