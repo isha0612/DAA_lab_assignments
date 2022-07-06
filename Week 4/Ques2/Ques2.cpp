@@ -2,7 +2,7 @@
 using namespace std;
 int c = 0, s = 0;
 int partition(int arr[], int l, int h) {
-    int x = (rand() % (l - h)) + l;
+    int x = rand() % (h - l + 1) + l;
     if(h != x) {
         s++;
         swap(arr[x], arr[h]);
@@ -10,7 +10,7 @@ int partition(int arr[], int l, int h) {
     int pivot = arr[h];
     int i = l - 1;
     for(int j = l; j <= h - 1; j++) {
-        if(arr[j] <= pivot) {
+        if(arr[j] < pivot) {
             i++;
             s++;
             swap(arr[i], arr[j]);
